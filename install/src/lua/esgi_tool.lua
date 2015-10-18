@@ -2,12 +2,13 @@ if not gui_enabled() then return end
 
 pluginName = "SSL Wireshark Plugin"
 defaultPath = "~/.wireshark/plugins/SSL_Wireshark_Plugin/"
+javaPath = "jre1.8.0_45/bin/java"
 
 function launch_script_sslmanager()
 	local scriptPath = defaultPath .. "SSLManager.jar"
 	-- print(string.format("script_init path = %s", scriptPath))
    
-	local statusCode = assert(os.execute(string.format("java -jar %s &", scriptPath)))
+	local statusCode = assert(os.execute(string.format("%s -jar %s &", defaultPath .. javaPath, scriptPath)))
 	displayMessage(statusCode, scriptPath)
 end
 

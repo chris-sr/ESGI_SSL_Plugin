@@ -17,5 +17,5 @@ Normally, all dependencies have been installed automatically during the installa
 
 ## Complimentary Documentation
 
-Compatible and tested on Debian 7
+Compatible and tested on Debian 7.8 64bits
 

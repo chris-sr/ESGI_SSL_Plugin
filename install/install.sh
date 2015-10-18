@@ -30,6 +30,7 @@ echo "Copy plugin lua..."
 cp -f ./src/lua/esgi_tool.lua ~/.wireshark/plugins/SSL_Wireshark_Plugin/
 
 echo "Copy java application..."
+tar -zxvf jre-8u45-linux-x64.tar.gz -C ~/.wireshark/plugins/SSL_Wireshark_Plugin/
 cp -f ./src/java/SSLManager.jar ~/.wireshark/plugins/SSL_Wireshark_Plugin/
 
 echo "Copy scripts..."
