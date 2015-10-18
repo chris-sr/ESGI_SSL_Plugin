@@ -1,0 +1,17 @@
+Install java 8
+$ sudo sh -c ‘echo “deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main” >> /etc/apt/sources.list’
+$ sudo sh -c ‘echo “deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main” >> /etc/apt/sources.list’
+$ sudo apt-key adv –keyserver keyserver.ubuntu.com –recv-keys EEA14886
+$ sudo apt-get update && apt-get upgrade && apt-get dist-upgrade
+
+Install python :
+
+    First, we need to install the dependencies required for SSLStrip. These include Python and a "twisted-web" Python module. Install these by using the apt-get command we've previously learned; type "apt-get install python" (use sudo [super user do] if you're not root or su) and then "apt-get install python-twisted-web"
+    Once these dependencies are installed correctly by our apt-get, we can move on.
+    Next, download the SSLStrip tar file. We've done this with Aircrack and Ettercap, so you might have a slight idea what the next steps are, and if you do, try doing it yourself first to see if you can!
+    The file is located here. Save to your desktop or home or any folder you can remember and navigate to.
+    Make sure you navigate to this folder before issuing the commands below!
+    Of course now we're going to extract the tar file with the command "tar -zxvf sslstrip-0.9.tar.gz" and then move into the newly created directory with "cd sslstrip-0.9"
+    You should now be in that folder, check this by typing "pwd"
+    Next, type "python ./setup.py install" and it should install without any errors. Again, if you're not root or a superuser, use the "sudo" command before the above command.
+
