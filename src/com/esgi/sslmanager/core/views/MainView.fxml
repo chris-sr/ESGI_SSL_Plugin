@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esgi.sslmanager.core.views.MainViewController">
+   <children>
+      <SplitPane dividerPositions="0.7491638795986622" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="800.0">
+               <children>
+                  <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="tabNetwork" text="Réseaux">
+                        <content>
+                          <AnchorPane>
+                                 <children>
+                                    <Button fx:id="buttonScanNetworkInterfaces" alignment="CENTER" layoutX="29.0" layoutY="35.0" mnemonicParsing="false" onAction="#clickOnScanNetworkInterfaces" prefHeight="26.0" prefWidth="218.0" text="Scan Interface(s) Réseau(x)" />
+                                    <ComboBox fx:id="chooseNetworkInterface" disable="true" layoutX="63.0" layoutY="100.0" prefWidth="150.0" />
+                                    <Label layoutX="63.0" layoutY="79.0" prefHeight="16.0" prefWidth="140.0" text="Interface Réseau :" />
+                                    <Button fx:id="buttonScanHosts" alignment="CENTER" disable="true" layoutX="562.0" layoutY="35.0" mnemonicParsing="false" onAction="#clickOnScanHosts" prefHeight="26.0" prefWidth="218.0" text="Scan Hôte(s)" />
+                                    <Button fx:id="buttonScanGateways" alignment="CENTER" disable="true" layoutX="291.0" layoutY="35.0" mnemonicParsing="false" onAction="#clickOnScanGateways" prefHeight="26.0" prefWidth="218.0" text="Scan Passerelle(s)" />
+                                    <Button fx:id="buttonIPForwarding" alignment="CENTER" layoutX="29.0" layoutY="248.0" mnemonicParsing="false" onAction="#clickOnButtonIPForwarding" prefHeight="26.0" prefWidth="218.0" text="Activer Routage IP" />
+                                    <ComboBox fx:id="chooseGateways" disable="true" layoutX="325.0" layoutY="100.0" prefWidth="150.0" />
+                                    <Label layoutX="325.0" layoutY="79.0" prefHeight="16.0" prefWidth="140.0" text="Passerelle :" />
+                                    <Label layoutX="587.0" layoutY="137.0" prefHeight="16.0" prefWidth="169.0" text="Masque sous-réseau :" />
+                                    <ComboBox fx:id="chooseSubMasks" disable="true" layoutX="587.0" layoutY="158.0" prefWidth="150.0" />
+                                    <TextField fx:id="currentGatewayIP" disable="true" layoutX="586.0" layoutY="100.0" />
+                                    <Label layoutX="586.0" layoutY="79.0" prefHeight="16.0" prefWidth="140.0" text="Passerelle :" />
+                                    <Label layoutX="63.0" layoutY="137.0" prefHeight="16.0" prefWidth="140.0" text="Adresse IP :" />
+                                    <TextField fx:id="currentAddressIP" editable="false" layoutX="63.0" layoutY="158.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="tabArpSpoof" closable="false" disable="true" text="Arpspoof">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.4983277591973244" layoutX="323.0" layoutY="4.0" prefHeight="200.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <Button fx:id="buttonStartArpspoof" disable="true" layoutX="73.0" layoutY="231.0" mnemonicParsing="false" onAction="#clickOnStartArpspoof" text="Démarrer" />
+                                                <TextField fx:id="ipTargetArpspoof" layoutX="43.0" layoutY="38.0" />
+                                                <Label layoutX="43.0" layoutY="14.0" prefHeight="16.0" prefWidth="140.0" text="IP Cible :" />
+                                                <TextField fx:id="ipGatewayArpspoof" layoutX="43.0" layoutY="99.0" />
+                                                <Label layoutX="43.0" layoutY="73.0" prefHeight="16.0" prefWidth="140.0" text="IP Passerelle :" />
+                                                <Label layoutX="43.0" layoutY="136.0" prefHeight="16.0" prefWidth="140.0" text="Interface réseau :" />
+                                                <TextField fx:id="currentNetworkInterfaceName" editable="false" layoutX="43.0" layoutY="162.0" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <TabPane prefHeight="198.0" prefWidth="296.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <tabs>
+                                                    <Tab fx:id="subTabHosts" text="Hôtes">
+                                                         <content>
+                                                            <ListView fx:id="listViewHosts" prefHeight="198.0" prefWidth="296.0" />
+                                                         </content>
+                                                      </Tab>
+                                                    <Tab fx:id="subTabGateways" text="Passerelles">
+                                                         <content>
+                                                            <ListView fx:id="listViewGateways" prefHeight="198.0" prefWidth="296.0" />
+                                                         </content>
+                                                      </Tab>
+                                                  </tabs>
+                                                </TabPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="tabSSLstrip" closable="false" disable="true" text="SSLstrip">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="buttonStartSSLstrip" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#clickOnStartSSLstrip" text="Démarrer" />
+                                    <TextField fx:id="sslStripPort" layoutX="174.0" layoutY="40.0" text="10000" />
+                                    <Label layoutX="174.0" layoutY="24.0" prefHeight="16.0" prefWidth="140.0" text="Port :" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Journaux">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="buttonExport" layoutX="710.0" layoutY="319.0" mnemonicParsing="false" onAction="#clickOnButtonExport" text="Exporter" />
+                                    <TableView fx:id="logTable" layoutX="35.0" layoutY="30.0" prefHeight="315.0" prefWidth="664.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="99.0" AnchorPane.topAnchor="30.0">
+                                      <columns>
+                                          <TableColumn fx:id="dateColumn" editable="false" minWidth="0.0" prefWidth="113.0" sortType="DESCENDING" text="Date" />
+                                        <TableColumn fx:id="domainNameColumn" editable="false" prefWidth="185.0" sortable="false" text="Nom domaine" />
+                                        <TableColumn fx:id="loginColumn" editable="false" minWidth="0.0" prefWidth="173.0" sortable="false" text="Identifiant" />
+                                          <TableColumn fx:id="passwordColumn" editable="false" minWidth="0.0" prefWidth="192.0" sortable="false" text="Mot de passe" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="buttonArchive" layoutX="710.0" layoutY="285.0" mnemonicParsing="false" onAction="#clickOnButtonArchive" text="Archiver" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="800.0">
+               <children>
+                  <TitledPane animated="false" collapsible="false" layoutY="-84.0" prefHeight="108.0" prefWidth="798.0" text="Console" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="consoleTextArea" editable="false" prefHeight="119.0" prefWidth="796.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
