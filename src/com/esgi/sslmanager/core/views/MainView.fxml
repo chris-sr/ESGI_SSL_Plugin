@@ -93,7 +93,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Button fx:id="buttonExport" layoutX="710.0" layoutY="319.0" mnemonicParsing="false" onAction="#clickOnButtonExport" text="Exporter" />
+                                    <Button fx:id="buttonExport" disable="true" layoutX="710.0" layoutY="319.0" mnemonicParsing="false" onAction="#clickOnButtonExport" text="Exporter" />
                                     <TableView fx:id="logTable" layoutX="35.0" layoutY="30.0" prefHeight="315.0" prefWidth="664.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="99.0" AnchorPane.topAnchor="30.0">
                                       <columns>
                                           <TableColumn fx:id="dateColumn" editable="false" minWidth="0.0" prefWidth="113.0" sortType="DESCENDING" text="Date" />
@@ -102,7 +102,7 @@
                                           <TableColumn fx:id="passwordColumn" editable="false" minWidth="0.0" prefWidth="192.0" sortable="false" text="Mot de passe" />
                                       </columns>
                                     </TableView>
-                                    <Button fx:id="buttonArchive" layoutX="710.0" layoutY="285.0" mnemonicParsing="false" onAction="#clickOnButtonArchive" text="Archiver" />
+                                    <Button fx:id="buttonArchive" disable="true" layoutX="710.0" layoutY="285.0" mnemonicParsing="false" onAction="#clickOnButtonArchive" text="Archiver" />
                                  </children>
                               </AnchorPane>
                            </content>

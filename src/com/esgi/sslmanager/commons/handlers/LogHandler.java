@@ -54,8 +54,6 @@ public class LogHandler {
 			fileList.add(absolutePath);
 		}
 
-		System.out.println("Reading new File..." + path.toFile().getName());
-
 		try (BufferedReader br = new BufferedReader(
 				new FileReader(absolutePath))) {
 			String line;
