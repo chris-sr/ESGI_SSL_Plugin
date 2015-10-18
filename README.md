@@ -3,11 +3,11 @@
 This Wireshark plugin allows you to launch a man in the middle attack with ARP poisoning method and trick the user with sslstrip to steal his login/password on websites without the SSL encryption.
 
 The plugin launch a java application (Java 8) with a graphical user interface (GUI) made in JavaFX.
-This application is aimed to beginners with very straight forward action to do the hacking. When the hacking is successful, you can read the login and password from the victim inside a table in real time.
+This application is aimed to beginners with very straight forward actions to do the hacking. When the hacking is successful, you can read the login and password from the victim inside a table in real time.
 
 ## Installing
 
-Running `install.sh` will install the dependencies, create the directories in your `$HOME/.wireshark`, then copy the lua script and the java application with his resources inside each proper directory.
+Running `install/install.sh` will install the dependencies, create the directories in your `$HOME/.wireshark`, then copy the lua script and the java application with his resources inside each proper directory.
 
 ## Dependencies
 

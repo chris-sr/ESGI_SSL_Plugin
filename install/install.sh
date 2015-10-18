@@ -1,4 +1,5 @@
 #!/bin/sh
+sudo apt-get install gksu
 gksu "apt-get clean"
 
 echo "Installing wireshark..."
