@@ -24,10 +24,6 @@ public class ArpspoofDebian implements IArpspoof {
 
 	@Override
 	public void start(String... commands) {
-		if (!new File(fullPath).exists()) {
-			System.out.println(getName() + " : application not found !");
-			return;
-		}
 		try {
 			//System.out.println(formatLastCommands(commands));
 			ProcessBuilder processBuilder = new ProcessBuilder(commands);

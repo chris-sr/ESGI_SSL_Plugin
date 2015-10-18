@@ -8,7 +8,7 @@ import com.esgi.sslmanager.commons.handlers.StreamHandler;
 
 public class SSLstripDebian implements ISSLstrip {
 
-	private final String fullPath = "/usr/local/bin/sslstrip";
+	private final String fullPath = "/usr/bin/sslstrip";
 	private final String pathScript = System.getProperty("user.home") +
 			"/.wireshark/plugins/SSL_Wireshark_Plugin/Scripts/sslstrip.sh";
 
@@ -24,10 +24,6 @@ public class SSLstripDebian implements ISSLstrip {
 
 	@Override
 	public void start(String... commands) {
-		if (!new File(fullPath).exists()) {
-			System.out.println(getName() + " : application not found !");
-			return;
-		}
 		try {
 //			System.out.println(formatLastCommands(commands));
 			ProcessBuilder processBuilder = new ProcessBuilder(commands);
