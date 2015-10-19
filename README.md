@@ -19,3 +19,4 @@ Normally, all dependencies have been installed automatically during the installa
 
 Compatible and tested on Debian 7.8 64bits
 
+Check the demo here : https://www.youtube.com/watch?v=7pfrJXEZI6k
